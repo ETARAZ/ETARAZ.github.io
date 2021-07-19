@@ -1,0 +1,245 @@
+:root{
+    background-color: #0c0c0c;
+}
+html {
+    scroll-behavior: smooth;
+  }
+body{
+    overflow-x: hidden;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.box{
+    /* border: 2px solid tomato; */
+    width: 100%;
+    display: flex;
+    background-color: white;
+    color: black;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+}
+h2{
+    font-weight: bold;
+    font-size: 2em;
+    
+}
+
+/*for desktop*/
+/*home*/
+.home{
+    background-image:url('img/mr.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    
+}
+.home ul{
+    list-style: none;
+    margin-left: 10px;
+}
+.home ul li{
+    width: 9rem;
+    height: 6rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 50%;
+    text-align: center;
+    font-size: larger;
+    border: 3px solid white;
+    overflow: hidden;
+    transition: .5s ease-in-out;
+}
+.home ul li:hover{
+  transform: rotate(-20deg);
+  border: 5px dotted white; 
+}
+.home ul li a{
+    text-decoration: none;
+    color: white;
+    font-size:1.5rem;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    line-height: 90px; 
+
+}
+.home ul li:not(:last-child){
+    margin-bottom: 1rem;
+}
+.home div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.home div h1{
+ font-size: 7rem;
+ font-weight: bold;
+ text-align: center;
+ padding: 1rem;
+ background-color: rgba(0, 0, 0, 0.7);
+ border: 3px dotted white;
+ border-radius: 20px;
+}
+/*home*/
+
+/*about*/
+.about .text,.about .title,.project .title,.contact .title{
+    border: 2px solid black;
+    border-radius: 20px;
+    margin-top: 20px;
+    box-shadow: 0 0 4px black;
+    text-align: center;
+}
+.about .title,.project .title,.contact .title{
+    margin-bottom: 5vh;
+    padding: 2rem;
+    
+}
+.about .text{
+    padding: 3rem;
+    box-shadow: 0 0 4px black;
+    text-align: justify; 
+}
+/*about*/
+
+/*project*/
+.project .list-projects,.contact .list-contacts{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.project .list-projects .p{
+    width: 15rem;
+    height: 15rem;
+    margin: 0 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 300px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    transition: .5s ease-in-out;
+}
+
+.project .list-projects .p:hover{
+    box-shadow: 0 0 6px black;
+    transform: rotate(20deg);
+}
+.project .list-projects .p:hover .title{
+    transition: 0.5s ease-in-out;
+    transform: rotate(-20deg);
+}
+.project .list-projects .p .title{
+
+    color: white;
+    background-color:rgba(0, 0, 0, 0.7);
+    border:none;
+    border-radius: 10px;
+    padding: 1rem;
+}
+.project .list-projects .p1{
+    background-image: url('img/weather.jpg');
+}
+.project .list-projects .p2{
+    background-image: url('img/chat.jpg');
+}
+.project .list-projects .p3{
+    background-image: url('img/blog.jpg');
+}
+/*project*/
+
+/*contact*/
+.contact .list-contacts .c{
+    margin: 0 6px;
+}
+.contact .list-contacts .mail a{
+    color: #656466;
+}
+.contact .list-contacts .linkedin a{
+    color: #0a66c2;
+}
+/*contact*/
+
+/*footer*/
+.footer{
+   padding: 5px 0;
+}
+    .footer p{
+        color: white;
+        text-align: center;
+    }
+/*footer*/
+
+/*for mobile*/
+
+@media only screen and (max-width: 768px) {
+ 
+    .home{
+        justify-content: center;
+        align-items: center;
+        flex-direction: column-reverse;
+        
+    }
+    .home ul li{
+        width: 10rem;
+        height: 6rem;
+        border-radius: 50%;
+        text-align: center;
+        border: 3px solid white;
+        overflow: hidden;
+    }
+    .home div{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      margin-bottom: 20px;
+      padding: 0 20px;
+      
+    }
+    .home div h1{
+     font-size: 5em;
+     padding: 0.5rem;
+    }
+    .project .list-projects,.contact .list-contacts{
+        flex-direction: column;
+        align-items: center;
+    }
+    .about .text{
+        text-align: center; 
+    }
+    .project .list-projects .p,.contact .list-contacts{
+        margin:5px 0;
+    }
+    
+   
+  }
+
+  @media only screen and (max-width: 375px){
+    .home div h1{
+        font-size:3.5em;
+       }
+    }
+
+    @media only screen and (max-width: 280px){
+        .home div h1{
+            font-size:3em;
+           }
+    }
+
+
+
