@@ -13,6 +13,7 @@ body{
     box-sizing: border-box;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+
 .box{
     /* border: 2px solid tomato; */
     width: 100%;
@@ -32,73 +33,106 @@ h2{
 /*for desktop*/
 /*home*/
 .home{
-    background-image:url('img/mr.jpg');
-    background-position: center;
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)) , url("./img/back.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
-    color: white;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-    
+    background-position: center;
+    justify-content: flex-start;
+    padding: 0;
 }
-.home ul{
-    list-style: none;
-    margin-left: 10px;
-}
-.home ul li{
-    width: 9rem;
-    height: 6rem;
-    background-color: rgba(0, 0, 0, 0.7);
-    border-radius: 50%;
-    text-align: center;
-    font-size: larger;
-    border: 3px solid white;
-    overflow: hidden;
-    transition: .5s ease-in-out;
-}
-.home ul li:hover{
-  transform: rotate(-20deg);
-  border: 5px dotted white; 
-}
-.home ul li a{
-    text-decoration: none;
-    color: white;
-    font-size:1.5rem;
-    display: inline-block;
+.home .humb-navbar{
+    padding: 10px;
+    position: sticky;
+    background-color: rgba(0,0,0,0.6);
     width: 100%;
-    height: 100%;
-    vertical-align: middle;
-    line-height: 90px; 
+    display: flex;
+    justify-content: flex-end;
 
 }
-.home ul li:not(:last-child){
-    margin-bottom: 1rem;
+.home .list-navbar{
+animation: anim 0.3s linear;
+display: flex;
+flex-direction:column;
+justify-content: center;
+align-items: center;
+position: fixed;
+left: 0;
+height: 100vh;
+background-color: rgba(0,0,0,0.4);
+z-index: 999;
+width: 50%;
+box-shadow: 2px 0 4px tomato;
 }
-.home div{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
+
+.home .list-navbar div{
+display: flex;
+flex-direction:column;
+justify-content: center;
+align-items: center;
+width: 100%;
 }
-.home div h1{
- font-size: 7rem;
- font-weight: bold;
- text-align: center;
- padding: 1rem;
- background-color: rgba(0, 0, 0, 0.7);
- border: 3px dotted white;
- border-radius: 20px;
+.home .list-navbar div a{
+    padding: 10px 30px;
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    background-color: rgba(255, 99, 71,0.5) 
 }
+
+.humb,.close{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background-color: rgba(0,0,0,0.2);
+    width: 60px !important;
+    box-shadow:0 0 3px tomato;
+    cursor: pointer;
+}
+.humb .line,.close .line{
+    position: relative;
+    width: 100%;
+    height: 6px;
+    margin-top: 3px;
+    background-color: white;
+    border-radius: 5px;
+
+}
+.close{
+    box-shadow: none;
+    background: none;
+    padding: 0;
+}
+.close:after{
+    text-shadow: 0 0 8px tomato;
+    display: inline-block;
+    content: "\00d7";
+    color:white;
+    font-size: 6rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+
+@keyframes anim {
+    from {
+        width: 0;
+    }
+    to {
+        width: 60%;
+    }
+}
+.none{
+    display: none !important;
+}
+.anim
 /*home*/
 
 /*about*/
 .about .text,.about .title,.project .title,.contact .title{
-    border: 2px solid black;
-    border-radius: 20px;
     margin-top: 20px;
-    box-shadow: 0 0 4px black;
+    box-shadow: 0 3px 4px black;
     text-align: center;
 }
 .about .title,.project .title,.contact .title{
@@ -107,6 +141,7 @@ h2{
     
 }
 .about .text{
+    width: 80%;
     padding: 3rem;
     box-shadow: 0 0 4px black;
     text-align: justify; 
@@ -169,6 +204,9 @@ h2{
 .contact .list-contacts .mail a{
     color: #656466;
 }
+.contact .list-contacts .mail a:hover{
+    color: #000000;
+}
 .contact .list-contacts .linkedin a{
     color: #0a66c2;
 }
@@ -187,34 +225,11 @@ h2{
 /*for mobile*/
 
 @media only screen and (max-width: 768px) {
+
+    .home .list-navbar{
+        width: 65%;
+    }
  
-    .home{
-        justify-content: center;
-        align-items: center;
-        flex-direction: column-reverse;
-        
-    }
-    .home ul li{
-        width: 10rem;
-        height: 6rem;
-        border-radius: 50%;
-        text-align: center;
-        border: 3px solid white;
-        overflow: hidden;
-    }
-    .home div{
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      margin-bottom: 20px;
-      padding: 0 20px;
-      
-    }
-    .home div h1{
-     font-size: 5em;
-     padding: 0.5rem;
-    }
     .project .list-projects,.contact .list-contacts{
         flex-direction: column;
         align-items: center;
