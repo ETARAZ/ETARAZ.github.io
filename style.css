@@ -7,6 +7,10 @@ html {
 body{
     overflow-x: hidden;
 }
+hr{
+    background-color: tomato;
+    height: 2px;
+}
 *{
     padding: 0;
     margin: 0;
@@ -24,6 +28,7 @@ body{
     flex-direction: column;
     padding: 10px;
 }
+
 h2{
     font-weight: bold;
     font-size: 2em;
@@ -51,7 +56,6 @@ h2{
 
 }
 .home .list-navbar{
-animation: anim 0.3s linear;
 display: flex;
 flex-direction:column;
 justify-content: center;
@@ -114,31 +118,20 @@ width: 100%;
     font-size: 6rem;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
-
-@keyframes anim {
-    from {
-        width: 0;
-    }
-    to {
-        width: 60%;
-    }
-}
-.none{
+.hidden{
     display: none !important;
 }
-.anim
 /*home*/
 
 /*about*/
 .about .text,.about .title,.project .title,.contact .title{
     margin-top: 20px;
-    box-shadow: 0 3px 4px black;
+    box-shadow: 0 5px 10px tomato;
     text-align: center;
+    background-color: white;
 }
 .about .title,.project .title,.contact .title{
-    margin-bottom: 5vh;
-    padding: 2rem;
-    
+    padding: 1rem;
 }
 .about .text{
     width: 80%;
@@ -171,7 +164,7 @@ width: 100%;
 }
 
 .project .list-projects .p:hover{
-    box-shadow: 0 0 6px black;
+    box-shadow: 0 0 10px tomato;
     transform: rotate(20deg);
 }
 .project .list-projects .p:hover .title{
@@ -185,6 +178,7 @@ width: 100%;
     border:none;
     border-radius: 10px;
     padding: 1rem;
+    box-shadow: none;
 }
 .project .list-projects .p1{
     background-image: url('img/weather.jpg');
