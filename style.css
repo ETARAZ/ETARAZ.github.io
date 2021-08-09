@@ -137,7 +137,24 @@ width: 100%;
     width: 80%;
     padding: 3rem;
     box-shadow: 0 0 4px black;
-    text-align: justify; 
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+}
+.avatar{
+    height: 9rem;
+    width: 9rem;
+    border-radius: 50%;
+    outline-color: black;
+    outline-style: solid;
+    outline-width: 3px;
+    margin-top: -7rem;
+    margin-bottom: 2rem;
+    background-image:url("./img/avatar.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 /*about*/
 
