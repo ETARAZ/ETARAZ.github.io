@@ -31,7 +31,8 @@
     width: 100%;
 }
 .navbar .icon{
-   
+    padding: 5px;
+   background-color: white ;
 }
 
 .list{
