@@ -1,269 +1,109 @@
-:root{
-    background-color: #0c0c0c;
-}
-html {
-    scroll-behavior: smooth;
-  }
-body{
-    overflow-x: hidden;
-}
-hr{
-    background-color: tomato;
-    height: 2px;
-}
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@700&display=swap');
 *{
-    padding: 0;
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-.box{
-    /* border: 2px solid tomato; */
-    width: 100%;
-    display: flex;
-    background-color: white;
-    color: black;
-    align-items: center;
-    flex-direction: column;
-    padding: 10px;
-}
-
-h2{
-    font-weight: bold;
-    font-size: 2em;
-    
-}
-
-/*for desktop*/
-/*home*/
-.home{
+.container{
+    background-color: black;
+    background-image:url('./img/back.jpg');
     height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)) , url("./img/back.jpg");
+    width: 100%;
+    background-position: right bottom;
     background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    justify-content: flex-start;
-    padding: 0;
-}
-.home .humb-navbar{
-    padding: 10px;
-    position: sticky;
-    background-color: rgba(0,0,0,0.6);
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-
-}
-.home .list-navbar{
-display: flex;
-flex-direction:column;
-justify-content: center;
-align-items: center;
-position: fixed;
-left: 0;
-height: 100vh;
-background-color: rgba(0,0,0,0.4);
-z-index: 999;
-width: 50%;
-box-shadow: 2px 0 4px tomato;
-}
-
-.home .list-navbar div{
-display: flex;
-flex-direction:column;
-justify-content: center;
-align-items: center;
-width: 100%;
-}
-.home .list-navbar div a{
-    padding: 10px 30px;
-    color: white;
-    font-size: 1.5rem;
-    text-decoration: none;
-    width: 100%;
-    text-align: center;
-    margin-top: 10px;
-    background-color: rgba(255, 99, 71,0.5) 
-}
-
-.humb,.close{
+    background-size: contain;
+    max-width: 2000px;
+    background-attachment: fixed;
+    font-family: 'IBM Plex Mono', monospace;
     display: flex;
     flex-direction: column;
-    padding: 10px;
-    background-color: rgba(0,0,0,0.2);
-    width: 60px !important;
-    box-shadow:0 0 3px tomato;
-    cursor: pointer;
-}
-.humb .line,.close .line{
     position: relative;
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0,0.7);
+    padding:5px 20px;
+    position: absolute;
+    top: 0;
     width: 100%;
-    height: 6px;
-    margin-top: 3px;
-    background-color: white;
-    border-radius: 5px;
+}
+.navbar .icon{
+    display: none;
+}
 
+.list{
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
 }
-.close{
-    box-shadow: none;
-    background: none;
-    padding: 0;
-}
-.close:after{
-    text-shadow: 0 0 8px tomato;
-    display: inline-block;
-    content: "\00d7";
-    color:white;
-    font-size: 6rem;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  }
-.hidden{
-    display: none !important;
-}
-/*home*/
 
-/*about*/
-.about .text,.about .title,.project .title,.contact .title{
-    margin-top: 20px;
-    box-shadow: 0 5px 10px tomato;
+.list a,.navbar > a{
+    background-color: coral;
+    padding: 15px;
     text-align: center;
-    background-color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: black;
+    transition: 0.2s ease-in-out;
+    box-shadow: 0 2px 1px cornflowerblue;
 }
-.about .title,.project .title,.contact .title{
-    padding: 1rem;
+.navbar > a{
+    background-color: coral;
+    border-radius: 30px;
+    padding: 15px;
+    font-size: 1.3rem;
+    box-shadow: 2px 2px 1px cornflowerblue;
+    position: relative;
+    right: 5px;
 }
-.about .text{
-    width: 80%;
-    padding: 3rem;
-    box-shadow: 0 0 4px black;
-    text-align: justify;
+.navbar a:hover{
+    background-color: cornflowerblue;
+    color: white !important;
+}
+
+.left{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.right{
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.active{
+    background-color: cornflowerblue !important;
+    color: white !important;
+}
+.info{
+    padding-top: 200px;
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin-top: 100px;
-}
-.avatar{
-    height: 9rem;
-    width: 9rem;
-    border-radius: 50%;
-    border: 2px solid black;
-    margin-top: -7rem;
-    margin-bottom: 2rem;
-    background-image:url("./img/avatar.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-/*about*/
-
-/*project*/
-.project .list-projects,.contact .list-contacts{
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-.project .list-projects .p{
-    width: 15rem;
-    height: 15rem;
-    margin: 0 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 300px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    cursor: pointer;
-    transition: .5s ease-in-out;
-}
-
-.project .list-projects .p:hover{
-    box-shadow: 0 0 10px tomato;
-    transform: rotate(20deg);
-}
-.project .list-projects .p:hover .title{
-    transition: 0.5s ease-in-out;
-    transform: rotate(-20deg);
-}
-.project .list-projects .p .title{
-
     color: white;
-    background-color:rgba(0, 0, 0, 0.7);
-    border:none;
-    border-radius: 10px;
-    padding: 1rem;
-    box-shadow: none;
+    background-color: rgba(0,0,0,0.4);
 }
-.project .list-projects .p1{
-    background-image: url('img/weather.jpg');
-}
-.project .list-projects .p2{
-    background-image: url('img/chat.jpg');
-}
-.project .list-projects .p3{
-    background-image: url('img/blog.jpg');
-}
-/*project*/
-
-/*contact*/
-.contact .list-contacts .c{
-    margin: 0 6px;
-}
-.contact .list-contacts .mail a{
-    color: #656466;
-}
-.contact .list-contacts .mail a:hover{
-    color: #000000;
-}
-.contact .list-contacts .linkedin a{
-    color: #0a66c2;
-}
-/*contact*/
-
-/*footer*/
-.footer{
-   padding: 5px 0;
-}
-    .footer p{
-        color: white;
-        text-align: center;
-    }
-/*footer*/
-
-/*for mobile*/
-
-@media only screen and (max-width: 768px) {
-
-    .home .list-navbar{
-        width: 65%;
-    }
- 
-    .project .list-projects,.contact .list-contacts{
-        flex-direction: column;
-        align-items: center;
-    }
-    .about .text{
-        text-align: center; 
-    }
-    .project .list-projects .p,.contact .list-contacts{
-        margin:5px 0;
-    }
+.info > div{
+    padding-left: 30px;
     
-   
-  }
+}
+.info .welcome{
+    font-size: 2rem;
+    margin-bottom: 50px;
+}
+.info .title{
+    font-size: 4rem;
+    margin-bottom: 50px;
+}
+.info .title{
+    font-size: 4rem;
+    margin-bottom: 50px;
+}
 
-  @media only screen and (max-width: 375px){
-    .home div h1{
-        font-size:3.5em;
-       }
-    }
-
-    @media only screen and (max-width: 280px){
-        .home div h1{
-            font-size:3em;
-           }
-    }
-
-
+.info .text{
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
 
