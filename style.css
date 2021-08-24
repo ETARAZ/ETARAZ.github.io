@@ -4,7 +4,13 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+body{
+    display: flex !important;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
 .container{
     background-color: black;
     background-image:url('./img/back.jpg');
@@ -12,13 +18,14 @@
     width: 100%;
     background-position: right bottom;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     max-width: 2000px;
     background-attachment: fixed;
     font-family: 'IBM Plex Mono', monospace;
     display: flex;
     flex-direction: column;
     position: relative;
+    overflow-x: hidden;
 }
 .navbar{
     display: flex;
@@ -30,16 +37,18 @@
     top: 0;
     width: 100%;
 }
-.navbar .icon{
-    padding: 5px;
-   background-color: white ;
-}
 
 .list{
     display: flex;
     justify-content: center;
     flex-grow: 1;
+    background-color: white;
 }
+
+.navbar  i{
+    display: none !important;
+}
+
 
 .list a,.navbar > a{
     background-color: coral;
@@ -60,6 +69,9 @@
     position: relative;
     right: 5px;
 }
+.navbar i{
+  color: rgb(255, 255, 255) !important;
+}
 .navbar a:hover{
     background-color: cornflowerblue;
     color: white !important;
@@ -74,20 +86,22 @@
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
 }
-.active{
+.active,.info .more{
     background-color: cornflowerblue !important;
     color: white !important;
 }
 .info{
     padding-top: 200px;
+    padding-bottom: 100px;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     color: white;
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0, 0, 0, 0.5);
 }
 .info > div{
-    padding-left: 30px;
+    padding:0 30px;
     
 }
 .info .welcome{
@@ -98,13 +112,94 @@
     font-size: 4rem;
     margin-bottom: 50px;
 }
-.info .title{
-    font-size: 4rem;
-    margin-bottom: 50px;
-}
+
 
 .info .text{
     font-size: 1.1rem;
     margin-bottom: 20px;
 }
+.info .more{
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 5px;
+    border-radius: 5px;
+}
 
+  @media screen and (max-width: 414px) {
+   
+    .info .title{
+        font-size: 2.7rem;
+        margin-bottom: 25px;
+    }
+    .info .welcome{
+        font-size: 1.5rem;
+        margin-bottom: 25px;
+    }
+    .info .text{
+        font-size: 1.1rem;
+        margin-bottom: 25px;
+    }
+    .info{
+        align-items: center;
+    }
+    .navbar > a{
+        padding: 7px;
+    }
+  }
+  @media screen and (min-width: 900px) {
+    .container{
+        background-position: bottom;
+        background-size: contain;
+    }
+    .info .title{
+        font-size: 6rem;
+        margin-bottom: 50px;
+        font-weight: bold;
+    }
+    .info .welcome{
+        font-size: 3rem;
+        margin-bottom: 50px;
+    }
+  }
+
+@media screen and (max-width:768px) {
+    .hide{
+        display: none;
+    }
+    .navbar  i{
+        display: block !important;
+    }
+    .container{
+        background-position: center;
+    }
+    .list{
+        display: flex;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+        z-index:999;
+        width: 100%;
+        background-color: white;
+        height: 100vh;
+        flex-direction: column;
+        align-items: center;
+        background-color:rgba(0, 0, 0,0.9);
+        position: fixed;
+    }
+    .list a{
+        width: 90%;
+        margin-bottom: 5px;
+        box-shadow: none;
+        position: relative;
+    }
+    .left{
+        border-bottom-left-radius: 0;
+        border-top-right-radius: 10px;
+    }
+    .right{
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 10px;
+    }
+
+}
