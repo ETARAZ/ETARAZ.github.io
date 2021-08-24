@@ -42,7 +42,6 @@ body{
     display: flex;
     justify-content: center;
     flex-grow: 1;
-    background-color: white;
 }
 
 .navbar  i{
