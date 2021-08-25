@@ -40,7 +40,7 @@ body{
     padding:5px 20px;
     top: 0;
     width: 100%;
-    position:fixed;
+    position:absolute;
     z-index: 3000;
 }
 
@@ -172,7 +172,7 @@ body{
     display: flex;
     flex-direction: column;
     color: white;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0,0.9);
     padding-top:200px;
 }
 .project_content{
@@ -181,8 +181,9 @@ body{
 }
 .project_info{
     display: flex;
-    height: 300px;
-    background-color: white;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
 }
 .project_title{
     font-size: var(--title);
@@ -200,7 +201,98 @@ body{
 .project_list_2{
     background-color:cornflowerblue;
 }
+.contact{
+    cursor: pointer;
+}
+.project_overview{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    padding: 20px;
+    width: 80%;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 20px 30px;
+}
+.project_image{
+    width: 100%;
+    object-fit: contain;
+}
+.project_open{
+    color: white;
+    background-color: cornflowerblue;
+    padding: 10px 15px;
+    text-decoration: none;
+    margin-top: 5px;
+}
+.middle{
+    background-color: coral !important;
+}
+
 /*project*/
+
+/*contact*/
+
+.contact_box{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: fixed;
+    z-index: 44444;
+    background-color: rgba(0, 0, 0,0.9);
+    top: 0;
+    bottom: 0;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    color: white;
+}
+.contact_form{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    justify-content: center;
+    padding:40px 20px;
+}
+.contact_input{
+    padding:10px;
+    margin-bottom: 20px;
+}
+.contact_input:focus{
+   outline: none;
+}
+.contact_text{
+    margin: 20px 0;
+    font-size: var(--text);
+}
+.contact_text a{
+   color: coral;
+   text-decoration: none;
+}
+textarea {
+    width: 300px !important;
+    height: 200px !important;
+}
+.contact_btn{
+    background-color: black;
+    width: 150px;
+    padding: 10px;
+    border:0;
+    color: coral;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.contact_title{
+    font-size: var(--welcome);
+}
+.hide_contact{
+    display: none;
+}
+.talk{
+    cursor: pointer;
+}
+
+/*contact*/
   @media screen and (max-width: 414px) {
 
     .about_title,.info .title{
@@ -289,6 +381,24 @@ body{
         width: 100%;
         text-align: center;
     }
+
+    
+    .project_info{
+        padding: 15px;
+    }
+    .project_title{
+        font-size: var(--title-mobile);
+    }
+    .project_overview{
+        padding: 10px;
+        width: 100%;
+    }
+    .project_open{
+        padding: 15px 20px;
+    }
+
+
+   
 
 }
 

@@ -18,17 +18,17 @@
     <main class="container home">
         <nav class="navbar">
             <i id="icon" class="fa fa-3x fa-bars" aria-hidden="true"></i>
-            <div id="list" class="list animate__animated hide">
+            <div id="list" class="list animate__animated  hide">
                 <a class="active left" href="index.html">Home</a>
                 <a href="about.html">About</a>
                 <a class="right" href="projects.html">Projects</a>
                 <i id="close" class="fa fa-3x fa-close" aria-hidden="true"></i>
             </div>
-            <a class="contact" href="contact.html">Contact</a>
+            <a class="contact">Contact</a>
         </nav>
 
         <section class="info">
-            <div class="animate__animated animate__fadeInRight">
+            <div class="animate__animated animate__fadeInRight animate__delay-1s animate__faster">
                 <h2 class="welcome">
                     Hi I'm Etaraz.
                 </h2>
@@ -44,10 +44,23 @@
                     Learn More..
                 </a>
             </div>
-            
         </section>
     </main>
 
+    <div class="contact_box animate__animated hide_contact">
+        <h1 class="contact_title">
+            Let's talk.
+        </h1>
+        <p class="contact_text">
+            Get in touch via the form below, or by emailing <a href="mailto:etarazenr14@gmail.com">exemple@gmail.com.</span>
+        </p>
+       <form class="contact_form">
+            <input class="contact_input" name="name" placeholder="Enter your name" required type="text">
+            <input class="contact_input" name="email" placeholder="Enter your email" required type="email">
+            <textarea class="contact_input" name="message" placeholder="Enter your message" required type="text"></textarea>
+            <button class="contact_btn">Submit</button>
+       </form>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
