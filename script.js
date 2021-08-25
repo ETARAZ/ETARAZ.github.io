@@ -1,6 +1,15 @@
 const icon = document.getElementById("icon");
 const list = document.getElementById("list");
 const close = document.getElementById("close");
+const container=document.querySelector('.container');
+
+var body = document.body,
+    html = document.documentElement;
+
+var height = Math.max( body.scrollHeight, body.offsetHeight, 
+                       html.clientHeight, html.scrollHeight, html.offsetHeight );
+console.log(height);
+container.style.height=`${height}px`;
 
 icon.addEventListener("click",()=>{
     list.classList.remove("hide");
