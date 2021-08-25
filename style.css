@@ -103,7 +103,7 @@ body{
     flex-direction: column;
     justify-content: center;
     color: white;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.5);
     overflow: hidden;
 }
 .info > div{
@@ -141,7 +141,7 @@ body{
     display: flex;
     flex-direction: column;
     color: white;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.5);
     padding-top:200px;
 }
 .info_content{
@@ -166,6 +166,41 @@ body{
 }
 
 /*about*/
+/*project*/
+.project{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-top:200px;
+}
+.project_content{
+    display: flex;
+    flex-direction: column;
+}
+.project_info{
+    display: flex;
+    height: 300px;
+    background-color: white;
+}
+.project_title{
+    font-size: var(--title);
+    text-align: center;
+    margin-bottom: 20px;
+}
+.project_list{
+    display: flex;
+    flex-direction: column;
+}
+.project_list_1,.project_list_3{
+    background-color: coral;
+}
+
+.project_list_2{
+    background-color:cornflowerblue;
+}
+/*project*/
   @media screen and (max-width: 414px) {
 
     .about_title,.info .title{
@@ -179,12 +214,6 @@ body{
     .about_text,.info .text{
         font-size: var(--text-mobile);
         margin-bottom: 25px;
-    }
-
-    .info_content{
-        padding: 0 20px;
-        width: 100%;
-        text-align: center;
     }
   
     .info{
@@ -253,6 +282,12 @@ body{
     }
     .hide{
         display: none !important;
+    }
+
+    .info_content{
+        padding: 0 20px;
+        width: 100%;
+        text-align: center;
     }
 
 }
