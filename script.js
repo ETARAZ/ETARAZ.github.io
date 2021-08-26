@@ -1,3 +1,4 @@
+$(function() {
 const icon = document.getElementById("icon");
 const list = document.getElementById("list");
 const close = document.getElementById("close");
@@ -5,6 +6,8 @@ const container=document.querySelector('.container');
 const contact=document.querySelector('.contact');
 const box=document.querySelector('.contact_box');
 const talk=document.querySelector('.talk');
+const contact_form=document.querySelector('.contact_form');
+const token="b290e510-3682-4ed8-94f5-ea4f195804bf";
 var body = document.body,
     html = document.documentElement;
 
@@ -43,3 +46,33 @@ close.addEventListener("click",()=>{
         list.classList.remove("animate__slideInLeft");
         list.classList.add("animate__slideOutRight");
 })
+
+contact_form.addEventListener('submit',function(e){
+    e.preventDefault();
+    const name=this.elements["name"].value.trim();
+    const email=this.elements["email"].value.trim();
+    const message=this.elements["message"].value.trim();
+    $(".contact_input").prop("disabled",true);
+    
+    Email.send({
+    SecureToken : token,
+    To : 'etarazenr14@gmail.com',
+    From : email,
+    Subject : "Customer call",
+    Body : `${message}<br>${name}`,
+}).then(message =>{
+
+    
+    alert(message);
+
+} );
+
+
+})
+
+
+
+
+
+
+});

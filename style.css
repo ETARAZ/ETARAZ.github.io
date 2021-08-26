@@ -247,8 +247,14 @@ body{
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 20px;
     color: white;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow-y: scroll;
+
+}
+.contact_box::-webkit-scrollbar { 
+    display: none;
 }
 .contact_form{
     display: flex;
@@ -266,6 +272,10 @@ body{
     width: 100%;
     max-width: 1000px;
     border: 1px solid coral;
+}
+textarea{
+    height: 150px;
+    resize: none;
 }
 .contact_input:focus{
    outline: none;
@@ -292,6 +302,7 @@ body{
 
 .contact_title{
     font-size: var(--title-mobile);
+    margin-top: 100px;
 }
 
 .hide_contact{
