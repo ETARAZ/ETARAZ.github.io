@@ -172,7 +172,7 @@ body{
     display: flex;
     flex-direction: column;
     color: white;
-    background-color: rgba(0, 0, 0,0.9);
+    background-color: rgba(0, 0, 0,0.6);
     padding-top:200px;
 }
 .project_content{
@@ -186,7 +186,8 @@ body{
     justify-content: center;
     align-items: center;
     width: 100%;
-    max-width: 1440px;
+    max-width:  500px;
+    
 }
 .project_title{
     font-size: var(--title);
@@ -195,7 +196,8 @@ body{
 }
 .project_list{
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 .project_list_1,.project_list_3{
     background-color: coral;
@@ -212,7 +214,7 @@ body{
     flex-direction: column;
     align-items: center;
     background-color: white;
-    padding: 20px;
+    padding: 15px;
     width: 80%;
     box-shadow: rgba(0, 0, 0, 0.5) 0px 20px 30px;
 }
@@ -241,7 +243,7 @@ body{
     width: 100%;
     position: fixed;
     z-index: 44444;
-    background-color: black;
+    background-color: rgba(0, 0, 0,0.9);
     top: 0;
     bottom: 0;
     align-items: center;
@@ -262,9 +264,10 @@ body{
     background-color: white;
     justify-content: center;
     align-items: center;
-    padding:40px 20px;
+    padding:100px 20px 10px;
     width: 100%;
-    max-width: 400px;
+    max-width: 500px;
+    margin-bottom: 45px;
 }
 .contact_input{
     padding:10px;
@@ -293,7 +296,7 @@ textarea{
     width: 100%;
     max-width: 200px;
     padding: 10px;
-    border:0;
+    border:1px solid coral;
     color: coral;
     font-size: 1rem;
     cursor: pointer;
@@ -314,8 +317,38 @@ textarea{
 }
 
 /*contact*/
-  @media screen and (max-width: 414px) {
 
+.alert{
+    display: none;
+    font-size: 1.5rem;
+    position: fixed;
+    top: 40%;
+    width: 100%;
+    max-width: 300px;
+    padding: 30px 20px;
+    z-index: 33;
+}
+.danger{
+    
+    background-color: white;
+    border:2px solid red;
+    color: red;
+}
+.success{
+    background-color: white;
+    border:2px solid green;
+    color: green;
+}
+
+@media screen and (max-height: 568px){
+    .contact_title{
+        margin-top: 150px !important;
+    }
+}
+  @media screen and (max-width: 414px) {
+    .contact_title{
+        margin-top: 50px;
+    }
     .about_title,.info .title{
         font-size: var(--title-mobile);
         margin-bottom: 25px;

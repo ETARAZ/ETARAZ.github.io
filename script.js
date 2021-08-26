@@ -8,12 +8,32 @@ const box=document.querySelector('.contact_box');
 const talk=document.querySelector('.talk');
 const contact_form=document.querySelector('.contact_form');
 const token="b290e510-3682-4ed8-94f5-ea4f195804bf";
-var body = document.body,
+
+document.body.onload=() =>{
+    var body = document.body,
     html = document.documentElement;
 
 var height = Math.max( body.scrollHeight, body.offsetHeight, 
                        html.clientHeight, html.scrollHeight, html.offsetHeight );
 container.style.height=`${height}px`;
+}
+window.onload=() =>{
+
+}
+
+const fade=(e)=>{
+
+$(e).fadeIn(function() {
+
+setTimeout(()=> {
+        $(this).fadeOut();
+    },3000);
+
+
+});
+
+}
+
 
 talk?.addEventListener("click",()=>{
     box.classList.remove("hide_contact");
@@ -53,22 +73,30 @@ contact_form.addEventListener('submit',function(e){
     const email=this.elements["email"].value.trim();
     const message=this.elements["message"].value.trim();
     $(".contact_input").prop("disabled",true);
-    
+    $(".contact_btn").text("Loading..");
+    $(".contact_btn").prop("disabled",true);
+
     Email.send({
     SecureToken : token,
     To : 'etarazenr14@gmail.com',
     From : email,
     Subject : "Customer call",
     Body : `${message}<br>${name}`,
-}).then(message =>{
+}).then((msg)=>{
+    if(msg.trim().toLowerCase()==="ok"){
+    fade($(".success"));
+    $(".contact_input").prop("disabled",false);
+    $(".contact_btn").text("Submit");
+    $(".contact_btn").prop("disabled",false);
+        return true;
+    }
 
-    
-    alert(message);
-
-} );
-
+    fade($(".danger"));
+} )
 
 })
+
+
 
 
 
