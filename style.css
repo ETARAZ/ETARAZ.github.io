@@ -40,8 +40,8 @@ body{
     padding:5px 20px;
     top: 0;
     width: 100%;
-    position:absolute;
-    z-index: 3000;
+    position:fixed;
+    z-index: 999999;
 }
 
 .list{
@@ -178,12 +178,15 @@ body{
 .project_content{
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 .project_info{
     display: flex;
     padding: 20px;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    max-width: 1440px;
 }
 .project_title{
     font-size: var(--title);
@@ -238,11 +241,12 @@ body{
     width: 100%;
     position: fixed;
     z-index: 44444;
-    background-color: rgba(0, 0, 0,0.9);
+    background-color: black;
     top: 0;
     bottom: 0;
     align-items: center;
     justify-content: center;
+    text-align: center;
     padding: 20px;
     color: white;
 }
@@ -251,11 +255,17 @@ body{
     flex-direction: column;
     background-color: white;
     justify-content: center;
+    align-items: center;
     padding:40px 20px;
+    width: 100%;
+    max-width: 400px;
 }
 .contact_input{
     padding:10px;
     margin-bottom: 20px;
+    width: 100%;
+    max-width: 1000px;
+    border: 1px solid coral;
 }
 .contact_input:focus{
    outline: none;
@@ -268,26 +278,26 @@ body{
    color: coral;
    text-decoration: none;
 }
-textarea {
-    width: 300px !important;
-    height: 200px !important;
-}
 .contact_btn{
     background-color: black;
-    width: 150px;
+    width: 100%;
+    max-width: 200px;
     padding: 10px;
     border:0;
     color: coral;
     font-size: 1rem;
     cursor: pointer;
+    font-weight: bold;
 }
 
 .contact_title{
-    font-size: var(--welcome);
+    font-size: var(--title-mobile);
 }
+
 .hide_contact{
     display: none;
 }
+
 .talk{
     cursor: pointer;
 }
@@ -398,7 +408,7 @@ textarea {
     }
 
 
-   
+ 
 
 }
 
