@@ -267,7 +267,6 @@ body{
     padding:100px 20px 10px;
     width: 100%;
     max-width: 500px;
-    margin-bottom: 45px;
 }
 .contact_input{
     padding:10px;
@@ -305,7 +304,7 @@ textarea{
 
 .contact_title{
     font-size: var(--title-mobile);
-    margin-top: 100px;
+    margin-top: 200px;
 }
 
 .hide_contact{
@@ -339,16 +338,7 @@ textarea{
     border:2px solid green;
     color: green;
 }
-
-@media screen and (max-height: 568px){
-    .contact_title{
-        margin-top: 150px !important;
-    }
-}
   @media screen and (max-width: 414px) {
-    .contact_title{
-        margin-top: 50px;
-    }
     .about_title,.info .title{
         font-size: var(--title-mobile);
         margin-bottom: 25px;
