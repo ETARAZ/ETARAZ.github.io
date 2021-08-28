@@ -18,6 +18,7 @@ body{
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    background-color: black;
 }
 .container{
     background-color: black;
@@ -243,17 +244,16 @@ body{
     width: 100%;
     position: fixed;
     z-index: 44444;
-    background-color: rgba(0, 0, 0,0.9);
+    background-color: black;
     top: 0;
     bottom: 0;
     align-items: center;
-    justify-content: center;
     text-align: center;
     color: white;
     -ms-overflow-style: none;
-    scrollbar-width: none;
+    scrollbar-width:none;
     overflow-y: scroll;
-
+    padding-top: 15vh;
 }
 .contact_box::-webkit-scrollbar { 
     display: none;
@@ -304,7 +304,6 @@ textarea{
 
 .contact_title{
     font-size: var(--title-mobile);
-    margin-top: 200px;
 }
 
 .hide_contact{
@@ -381,6 +380,9 @@ textarea{
 
 
 @media screen and (max-width:768px) {
+    .navbar{
+        background-color: transparent;
+    }
     .navbar  i{
         display: block !important;
     }

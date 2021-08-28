@@ -1,4 +1,8 @@
 $(function() {
+
+window.addEventListener("scroll",function(){
+    $(".contact_box").scrollTop($(window).scrollTop());
+})
 const icon = document.getElementById("icon");
 const list = document.getElementById("list");
 const close = document.getElementById("close");
@@ -16,9 +20,6 @@ document.body.onload=() =>{
 var height = Math.max( body.scrollHeight, body.offsetHeight, 
                        html.clientHeight, html.scrollHeight, html.offsetHeight );
 container.style.height=`${height}px`;
-}
-window.onload=() =>{
-
 }
 
 const fade=(e)=>{
@@ -39,11 +40,14 @@ talk?.addEventListener("click",()=>{
     box.classList.remove("hide_contact");
     box.classList.remove("animate__slideOutRight");
     box.classList.add("animate__slideInLeft");
+    $(".contact_box").scrollTop($(window).scrollTop());
 });
 contact.addEventListener("click",()=>{
     box.classList.remove("hide_contact");
     box.classList.remove("animate__slideOutRight");
     box.classList.add("animate__slideInLeft");
+    $(".contact_box").scrollTop($(window).scrollTop());
+
 });
 icon.addEventListener("click",()=>{
     list.classList.remove("hide");
@@ -65,6 +69,11 @@ window.addEventListener("click",(e)=>{
 close.addEventListener("click",()=>{
         list.classList.remove("animate__slideInLeft");
         list.classList.add("animate__slideOutRight");
+})
+
+$('.contact_close').on("click",()=>{
+    box.classList.remove("animate__slideInLeft");
+    box.classList.add("animate__slideOutRight");
 })
 
 contact_form.addEventListener('submit',function(e){
